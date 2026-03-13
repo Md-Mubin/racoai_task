@@ -1,0 +1,5 @@
+"use client";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
+export default function AdminLayout({ children }) {
+  return <DashboardLayout allowedRole="ADMIN">{children}</DashboardLayout>;
+}

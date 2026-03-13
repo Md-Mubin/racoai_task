@@ -1,0 +1,27 @@
+{
+  "name": "task_workflow_system",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Md Irfan Rahman Mubin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --env-file=.env src/index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.9.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.0",
+    "mongoose": "^9.3.0",
+    "multer": "^2.1.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "nodemon": "^3.1.14",
+    "regex": "^6.1.0"
+  }
+}
