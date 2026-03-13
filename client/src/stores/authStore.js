@@ -1,23 +1,26 @@
 import { create } from "zustand";
 
-const API = process.env.NEXT_PUBLIC_API_URL;
-
 const load = () => {
   if (typeof window === "undefined") return { token: null, user: null };
   try {
     return {
       token: localStorage.getItem("token"),
-      user:  JSON.parse(localStorage.getItem("user") || "null"),
+      user: JSON.parse(localStorage.getItem("user") || "null"),
     };
   } catch { return { token: null, user: null }; }
 };
 
 export const useAuthStore = create((set) => ({
+  ...load(),
   user: null,
   token: null,
   isLoading: true, // ✅ must be true by default
-  
-  setAuth: ({ token, user }) => set({ token, user, isLoading: false }),
+
+  setAuth: ({ token, user }) => {
+    localStorage.setItem("token", token);                  // ✅
+    localStorage.setItem("user", JSON.stringify(user));    // ✅
+    set({ token, user, isLoading: false });
+  },
   setLoading: (val) => set({ isLoading: val }),
   logout: () => {
     localStorage.removeItem("token");
