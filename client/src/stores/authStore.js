@@ -12,19 +12,19 @@ const load = () => {
 
 export const useAuthStore = create((set) => ({
   ...load(),
-  user: null,
-  token: null,
   isLoading: true, // ✅ must be true by default
 
   setAuth: ({ token, user }) => {
-    localStorage.setItem("token", token);                  // ✅
-    localStorage.setItem("user", JSON.stringify(user));    // ✅
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
+    document.cookie = `token=${token}; path=/; max-age=${7 * 24 * 60 * 60}; SameSite=Lax; Secure`;
     set({ token, user, isLoading: false });
   },
   setLoading: (val) => set({ isLoading: val }),
   logout: () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    document.cookie = "token=; path=/; max-age=0";
     set({ user: null, token: null, isLoading: false });
   }
 }));
