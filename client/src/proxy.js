@@ -3,11 +3,9 @@ import { NextResponse } from "next/server";
 const PROTECTED = ["/admin", "/buyer", "/solver"];
 const AUTH_PATHS = ["/login", "/register"];
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl;
-  console.log(pathname)
   const token = request.cookies.get("token")?.value;
-  console.log(token)
 
   if (PROTECTED.some((p) => pathname.startsWith(p)) && !token)
     return NextResponse.redirect(new URL("/login", request.url));
