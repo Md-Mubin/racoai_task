@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --env-file=.env src/index.js"
+    "start": "node --env-file=.env src/index.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -21,7 +21,6 @@
     "mongoose": "^9.3.0",
     "multer": "^2.1.1",
     "multer-storage-cloudinary": "^2.2.1",
-    "nodemon": "^3.1.14",
     "regex": "^6.1.0"
   }
 }
