@@ -1,9 +1,10 @@
+// src/middleware.js
 import { NextResponse } from "next/server";
 
 const PROTECTED = ["/admin", "/buyer", "/solver"];
 const AUTH_PATHS = ["/login", "/register"];
 
-export function proxy(request) {
+export function middleware(request) {  
   const { pathname } = request.nextUrl;
   const token = request.cookies.get("token")?.value;
 
@@ -18,4 +19,4 @@ export function proxy(request) {
 
 export const config = {
   matcher: ["/admin/:path*", "/buyer/:path*", "/solver/:path*", "/login", "/register"],
-};
+}
