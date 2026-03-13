@@ -20,7 +20,7 @@ export function Button({ children, onClick, type = "button", variant = "primary"
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        "inline-flex items-center justify-center gap-1.5 rounded-sm font-semibold transition-all duration-150 whitespace-nowrap active:scale-95",
+        "bg-mainColor cursor-pointer inline-flex items-center justify-center gap-1.5 rounded-sm font-semibold transition-all duration-150 whitespace-nowrap active:scale-95",
         variants[variant],
         sizes[size],
         disabled && "opacity-50 cursor-not-allowed",

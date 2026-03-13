@@ -76,6 +76,7 @@ export default function AdminUsersPage() {
                     ))}
                   </select>
                   <Button
+                    className={"text-white"}
                     size="sm"
                     variant="secondary"
                     disabled={!pendingRoles[user._id] || pendingRoles[user._id] === user.role}

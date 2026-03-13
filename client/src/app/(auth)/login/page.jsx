@@ -71,7 +71,7 @@ export default function LoginPage() {
         </div>
 
         <p className="text-center text-xs text-text-light mt-4">
-          Demo: admin@racoai.com / alice@racoai.com / carlos@racoai.com — password: password123
+          Demo: admin@racoai.com - password: @Pass123
         </p>
       </div>
     </div>

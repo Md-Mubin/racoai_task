@@ -1,3 +1,5 @@
+import { X } from "lucide-react";
+
 export function Modal({ open, onClose, title, children }) {
   if (!open) return null;
 
@@ -7,7 +9,7 @@ export function Modal({ open, onClose, title, children }) {
       onClick={onClose}
     >
       <div
-        className="bg-surface rounded-lg w-full max-w-lg mx-4 shadow-lg animate-slideUp"
+        className="bg-surface rounded-lg w-full max-w-lg mx-4 shadow-lg animate-slideUp bg-white"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center px-6 py-4 border-b border-border">
@@ -16,7 +18,7 @@ export function Modal({ open, onClose, title, children }) {
             onClick={onClose}
             className="text-text-light hover:text-text text-2xl leading-none bg-transparent border-none cursor-pointer"
           >
-            ×
+            <X/>
           </button>
         </div>
         <div className="px-6 py-5">{children}</div>

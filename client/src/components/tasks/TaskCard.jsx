@@ -26,17 +26,17 @@ export function TaskCard({ task, role, onStatusChange, onDelete, onSubmitWork })
 
         <div className="flex items-center gap-2 shrink-0">
           {role === "PROBLEM_SOLVER" && next && (
-            <Button size="sm" variant="secondary" onClick={() => onStatusChange(task._id, next)}>
+            <Button className={"text-white"} size="sm" variant="secondary" onClick={() => onStatusChange(task._id, next)}>
               → {statusLabel(next)}
             </Button>
           )}
           {role === "PROBLEM_SOLVER" && task.status === "IN_PROGRESS" && onSubmitWork && (
-            <Button size="sm" onClick={() => onSubmitWork(task._id)}>
+            <Button className={"text-white"} size="sm" onClick={() => onSubmitWork(task._id)}>
               Submit ZIP
             </Button>
           )}
           {role === "BUYER" && buyerActions?.map((s) => (
-            <Button key={s} size="sm"
+            <Button className="text-white" key={s} size="sm"
               variant={s === "REJECTED" ? "danger" : "primary"}
               onClick={() => onStatusChange(task._id, s)}>
               {s}

@@ -30,8 +30,8 @@ export function Sidebar() {
           const active = pathname === item.href;
           return (
             <Link key={item.href} href={item.href}
-              className={`block px-3 py-2.5 rounded-md text-sm font-semibold transition-colors
-                ${active ? "bg-brand-light text-brand" : "text-text-muted hover:bg-bg hover:text-text"}`}>
+              className={`block px-3 py-2.5 rounded-md text-sm font-semibold transition-colors cursor-pointer 
+                ${active ? "bg-brand-light text-mainColor bg-mainColor/30" : "text-text-muted hover:bg-bg hover:bg-mainColorHover"}`}>
               {item.label}
             </Link>
           );
